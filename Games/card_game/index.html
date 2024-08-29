@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Card Game</title>
+</head>
+<body>
+  <div class="topnav">
+
+  <div class="topnav-centered">
+    <h1>Card Quest</h1>
+  </div>
+  
+  <h1><a class="back-btn" href="../game_selection/index.html">󰁍</a></h1>
+  <h1 style="color: green;">SCORE: <span id="scoreH"></span></h1>
+  
+  <div class="topnav-right">
+    <h1 style="float: right;"> <span style="color: red;" id="lifeH"></span></h1>
+  </div>
+  
+</div>
+    <div id="card-container" class="grid-container">
+        
+    </div>
+    <div id="dialog" class="dialog">
+      <div class="dialog-content">
+          <h2>Choose True or False</h2>
+          <div class="img-dialog-container">
+            <img class="dialog-img" src="./images/card_white.png" alt="">
+            <div id="ques" class="centered">In a peaceful neighborhood, there lived a young girl named Maya. She had a heart full of curiosity and a love for learning.</div>
+          </div>
+          <br>
+          <button id="true-btn">Right</button>
+          <button id="false-btn">Wrong</button>
+      </div>
+  </div>
+    <script src="../card_game/script.js"></script>
+</body>
+</html>
+
