@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Popup Dialog</title>
+    <style>
+        /* Styles for the dialog */
+.dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+    z-index: 1;
+}
+
+.dialog-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <button id="openDialog">Open Dialog</button>
+    <div id="dialog" class="dialog">
+        <div class="dialog-content">
+            <span id="closeDialog" class="close">&times;</span>
+            <h2>Choose the correct option</h2>
+            <img src="./images/card_white.png" alt="">
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const openDialogButton = document.getElementById("openDialog");
+    const dialog = document.getElementById("dialog");
+    const closeDialogButton = document.getElementById("closeDialog");
+
+    openDialogButton.addEventListener("click", function () {
+        dialog.style.display = "block";
+    });
+
+    closeDialogButton.addEventListener("click", function () {
+        dialog.style.display = "none";
+    });
+
+    // Close the dialog when clicking outside of it
+    dialog.addEventListener("click", function (event) {
+        if (event.target === dialog) {
+            dialog.style.display = "none";
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
