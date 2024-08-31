@@ -6,7 +6,7 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 
 // renderer.setSize(window.innerWidth, window.innerHeight);
-let ele=document.getElementById('model');
+let ele = document.getElementById('model');
 const width = ele.clientWidth;
 const height = ele.clientHeight;
 renderer.setSize(width, height);
@@ -22,6 +22,7 @@ scene.add(light);
 
 let model;
 let initialRotationY = Math.PI / 4; // 45 degrees to the right
+let targetRotationY = initialRotationY; // Target rotation initialized
 
 // Load the Lady Justice model using GLTFLoader
 const loader = new THREE.GLTFLoader();
@@ -37,7 +38,7 @@ loader.load('model.glb', function (gltf) {
     
     // Position the camera
     camera.position.set(0, 1.5, 7); // Move camera closer by reducing the z value
-    camera.lookAt(new THREE.Vector3(0, 1.5, 0));; // Make the camera look at the model
+    camera.lookAt(new THREE.Vector3(0, 1.5, 0)); // Make the camera look at the model
     
     // Start animation
     animate();
@@ -49,7 +50,6 @@ loader.load('model.glb', function (gltf) {
 const mouse = new THREE.Vector2();
 
 let isMouseOverDiv = false;
-let targetRotationY = initialRotationY;
 
 // Get the target div
 const modelDiv = document.getElementById('model');
@@ -63,10 +63,7 @@ modelDiv.addEventListener('mouseleave', () => {
     isMouseOverDiv = false;
     // Smoothly reset the model's rotation to the initial position
     if (model) {
-        new TWEEN.Tween(model.rotation)
-            .to({ y: initialRotationY }, 1000) // 1 second duration
-            .easing(TWEEN.Easing.Quadratic.Out)
-            .start();
+        targetRotationY = initialRotationY;
     }
 });
 
@@ -81,16 +78,30 @@ modelDiv.addEventListener('mousemove', (event) => {
 
         // Apply the calculated rotation to the model (add it to the initial 45 degrees)
         targetRotationY = initialRotationY + rotationY;
-        model.rotation.y = targetRotationY;
     }
 });
+
+// Smoothly interpolate the rotation
+const rotationSpeed = 0.01; // Slower speed for smoother animation
+
+function rotateModelSmoothly() {
+    if (model) {
+        // Gradually adjust the current rotation towards the target rotation
+        const deltaRotation = targetRotationY - model.rotation.y;
+        model.rotation.y += deltaRotation * rotationSpeed;
+        
+        // Optionally clamp the rotation to avoid excessive movement
+        const maxRotation = Math.PI / 2; // Maximum allowed rotation
+        model.rotation.y = Math.max(-maxRotation, Math.min(maxRotation, model.rotation.y));
+    }
+}
 
 // Render loop
 function animate() {
     requestAnimationFrame(animate);
 
-    // Update tweens
-    TWEEN.update();
+    // Smoothly rotate the model based on mouse movement
+    rotateModelSmoothly();
 
     // Render the scene
     renderer.render(scene, camera);
