@@ -1,0 +1,83 @@
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+.imgg{
+    width: 100%;
+    object-fit: contain;
+}
+
+
+.pop_box{
+    z-index: 100;
+    width: 280px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5);
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: scale(0);
+    transition: 1s;
+}
+.js_pop_box{
+    transform: translate(-50%, -50%);
+    transform: scale(1);
+    transition: 1s;
+    transform: translate(-50%, -50%);
+}
+
+.result_image{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.pop_btn_bar{
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.pop_btn{
+    width: 80px;
+    margin-left: 10px;
+    padding: 5px 0px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #d3297a;
+    color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+@media screen and (min-width : 1200px) {
+    .pop_box{
+        width: 400px;
+        height: 400px;
+    }
+    .result_image{
+        width: 200px;
+        height: 200px;
+    }
+    .pop_btn{
+        min-width: 90px;
+        padding: 10px;
+    }
+}
