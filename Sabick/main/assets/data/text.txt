@@ -1,0 +1,22 @@
+Use  I to get Info Page
+
+interact :
+    1: For resources
+
+
+
+
+info done
+
+resource  done
+
+dim done
+
+npc interaction
+
+key collection
+
+genie
+
+
+have to optimize the resource adding and code
