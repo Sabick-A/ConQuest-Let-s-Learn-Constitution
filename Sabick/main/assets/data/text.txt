@@ -1,0 +1,14 @@
+Use  I to get Info Page
+
+interact :
+    1: For resources
+
+
+
+
+info done
+
+resource  done
+
+
+have to optimize the resource adding
