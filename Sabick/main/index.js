@@ -1,25 +1,34 @@
 
-let started=false;
-let isDivOpen=false;
-const events=['keydown','click','keyup'];
+let started = false;
+let isDivOpen = false;
+const events = ['keydown', 'click', 'keyup'];
 
 
 const infoDiv = document.getElementById('info');
 const commandsDiv = document.getElementById('commands');
 const xButton = document.getElementById('xbutton');
-const resDiv=document.getElementById('resources');
-const activePreambleDiv=document.querySelectorAll('.preamble');
-let activePreamble=0;
+const resDiv = document.getElementById('resources');
+const activePreambleDiv = document.querySelectorAll('.preamble');
+let activePreamble = 0;
+
+function dimIt() {
+    canvas.classList.add('dimmed');
+    commandsDiv.classList.add('dimmed');
+}
+
+function unDimIt() {
+    canvas.classList.remove('dimmed');
+    commandsDiv.classList.remove('dimmed');
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const startDiv = document.getElementById('start');
     events.forEach(event => {
         document.addEventListener(event, () => {
-            if(!started){
+            if (!started) {
                 startDiv.classList.add('hidden');
-                canvas.classList.remove('dimmed');
-                commandsDiv.classList.remove('dimmed');
-                started=true;
+                unDimIt();
+                started = true;
             }
         });
     });
@@ -39,8 +48,8 @@ canvas.height = window.innerHeight
 // made the offset of the background responsive and will always be in center no matter the screen size
 
 const offset = {
-    x:  -1500 + ((canvas.width - 1024) / 2),
-    y:  -1500 + ((canvas.height - 576) / 2),
+    x: -1500 + ((canvas.width - 1024) / 2),
+    y: -1500 + ((canvas.height - 576) / 2),
 }
 // collision mechanism
 const collisionMap = []//2d array representing the grid
@@ -183,7 +192,7 @@ const keys = {
     },
 }
 
-const movables = [background, ...boundaries, foreground, ...teleports,...interacts];
+const movables = [background, ...boundaries, foreground, ...teleports, ...interacts];
 
 // softedge is created to make the boundary smaller thus given more movement space to the player
 const softedge = {
@@ -205,24 +214,25 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
     )
 }
 
-function openPreamble(){
+function openPreamble() {
+    activePreamble = 0;
     resDiv.classList.add('hidden');
     activePreambleDiv[activePreamble].classList.remove('hidden');
 }
 
-function closePreamble(){
+function closePreamble() {
     activePreambleDiv[activePreamble].classList.add('hidden');
     resDiv.classList.remove('hidden');
 }
 
-function nextPreamble(){
+function nextPreamble() {
     activePreambleDiv[activePreamble].classList.add('hidden');
     activePreamble++;
     activePreambleDiv[activePreamble].classList.remove('hidden');
 }
 
-function prevPreamble(){
-    
+function prevPreamble() {
+
     activePreambleDiv[activePreamble].classList.add('hidden');
     activePreamble--;
     activePreambleDiv[activePreamble].classList.remove('hidden');
@@ -230,7 +240,7 @@ function prevPreamble(){
 
 function updateXButton() {
 
-    
+
 
     if (xButton) {
 
@@ -257,7 +267,7 @@ function updateXButton() {
             if (xButton.classList.contains('hidden') && started && !isDivOpen) {
                 xButton.classList.remove('hidden');
 
-                
+
             }
 
         } else {
@@ -288,15 +298,16 @@ function animate() {
             console.log('collision')
         }
     });
-    
+
     interacts.forEach(inter => {
         inter.draw();
-        if(rectangularCollision({rectangle1:player,rectangle2:inter}) && keys.x.pressed){
+        if (rectangularCollision({ rectangle1: player, rectangle2: inter }) && keys.x.pressed) {
             console.log("interaction activated");
 
-            if(inter.val==1){
-                isDivOpen=true;
+            if (inter.val == 1) {
+                isDivOpen = true;
                 resDiv.classList.remove('hidden');
+                dimIt();
             }
         }
     });
@@ -305,7 +316,7 @@ function animate() {
     player.draw()
     // foreground.draw()
 
-    
+
 
 
     if (teleportActivation.initiate) return
@@ -466,32 +477,32 @@ window.addEventListener('keydown', (e) => {
             keys.x.pressed = true;
             break
         case ("i"):
-            if(started){
-                
-                if(infoDiv.classList.contains('hidden')){
+            if (started) {
+
+                if (infoDiv.classList.contains('hidden')) {
                     infoDiv.classList.remove('hidden');
                     canvas.classList.add('dimmed');
-                    commandsDiv.classList.add('dimmed');
-                    xButton.classList.add('hidden');
-                    isDivOpen=true;
+                    dimIt();
+                    isDivOpen = true;
                 }
-                else{
+                else {
                     infoDiv.classList.add('hidden');
-                    canvas.classList.remove('dimmed');
-                    commandsDiv.classList.remove('dimmed');
+                    unDimIt();
                     xButton.classList.remove('hidden');
-                    isDivOpen=false;
+                    isDivOpen = false;
                 }
             }
             break
         case ("q"):
-            if(!resDiv.classList.contains('hidden')){
+            if (!resDiv.classList.contains('hidden')) {
                 resDiv.classList.add('hidden');
-                isDivOpen=false;
+                isDivOpen = false;
+                unDimIt();
             }
-            if(!activePreambleDiv[activePreamble].classList.contains('hidden')){
+            if (!activePreambleDiv[activePreamble].classList.contains('hidden')) {
                 activePreambleDiv[activePreamble].classList.add('hidden');
-                isDivOpen=false;
+                isDivOpen = false;
+                unDimIt();
             }
     }
 

@@ -10,5 +10,13 @@ info done
 
 resource  done
 
+dim done
 
-have to optimize the resource adding
+npc interaction
+
+key collection
+
+genie
+
+
+have to optimize the resource adding and code
