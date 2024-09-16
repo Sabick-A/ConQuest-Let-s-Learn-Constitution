@@ -14,12 +14,16 @@ let activePreamble = 0;
 function dimIt() {
     canvas.classList.add('dimmed');
     commandsDiv.classList.add('dimmed');
+    isDivOpen=true;
 }
 
 function unDimIt() {
     canvas.classList.remove('dimmed');
     commandsDiv.classList.remove('dimmed');
+    isDivOpen=false;
 }
+
+window.botpress.on('webchat:closed',unDimIt);
 
 document.addEventListener('DOMContentLoaded', () => {
     const startDiv = document.getElementById('start');
@@ -34,8 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
-
-
 
 const canvas = document.querySelector('#mainFrame');
 
@@ -60,7 +62,7 @@ for (let i = 0; i < collisions.length; i += 70) {
 const boundaries = []
 collisionMap.forEach((row, i) => {
     row.forEach((column, j) => {
-        if (column === 9) {
+        if (column != 0) {
             boundaries.push(
                 new Boundary({
                     position: {
@@ -80,7 +82,7 @@ for (let i = 0; i < teleport.length; i += 70) {
 const teleports = []
 teleportMap.forEach((row, i) => {
     row.forEach((column, j) => {
-        if (column === 1) {
+        if (column != 0) {
             teleports.push(
                 new Boundary({
                     position: {
@@ -100,7 +102,7 @@ for (let i = 0; i < interact.length; i += 70) {
 const interacts = []
 interactMap.forEach((row, i) => {
     row.forEach((column, j) => {
-        if (column === 1) {
+        if (column != 0) {
             interacts.push(
                 new Boundary({
                     position: {
@@ -307,6 +309,12 @@ function animate() {
             if (inter.val == 1) {
                 isDivOpen = true;
                 resDiv.classList.remove('hidden');
+                dimIt();
+            }
+            else if (inter.val == 2) {
+                const botpress = window.botpress;
+                botpress.open();
+                isDivOpen = true;
                 dimIt();
             }
         }

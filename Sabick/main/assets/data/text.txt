@@ -12,11 +12,12 @@ resource  done
 
 dim done
 
+bot done
+
 npc interaction
 
 key collection
 
-genie
 
 
 have to optimize the resource adding and code
