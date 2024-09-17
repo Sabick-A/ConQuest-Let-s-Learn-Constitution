@@ -85,6 +85,7 @@ function displayResult(data) {
 function animateLife(life) {
     const hearts = document.querySelectorAll(".heart");
     hearts[life].classList.add("lost");
+    hearts[life-1].classList.add("animated-header");
 }
 
 document.addEventListener("DOMContentLoaded", function () {
