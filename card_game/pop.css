@@ -58,3 +58,16 @@
 .close-btn:hover {
     background: #c62828;
 }
+
+@media (min-width: 1200px) {
+    .popup-box {
+        width: 400px;
+        height: 480px;
+    }
+    .popup-content {
+        font-size: 80px;
+    }
+    .popup-title {
+        font-size: 50px;
+    }
+}

@@ -17,8 +17,8 @@ for (let i = 1; i <= 8; i++) {
 
 let qns = [
     [
-        "Children in India have the right to free and compulsory education between the ages of 6 and 14.",
-        1,
+        "While DPSPs are not enforceable by courts, the government is constitutionally obligated to prioritize them over Fundamental Rights when forming policies.",
+        0,
     ],
     ["Children under the age of 14 are allowed to work for jobs.", 0],
     [
