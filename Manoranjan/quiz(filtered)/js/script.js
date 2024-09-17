@@ -524,14 +524,23 @@ function $fade(appState){
 
 // Work in progress...
 function $showResults(appState){
+  let endMsg = '';
+  let endFeedback = '';
 	if(appState.correctAnswers === 10){
-		let endMsg = `You got ${appState.percCorrect}% correct!
+		endMsg = `You got ${appState.percCorrect}% correct!
 I have nothing else to teach you. Move on and prosper!
 `;
 	} else {
 		$('.answer-btn').remove();
-		let endMsg = `You got ${appState.percCorrect}% correct!`
-		let endFeedback = ``;
+    if(appState.correctAnswers >= 3){
+		  endMsg = `You got ${appState.percCorrect}% correct!`
+		  endFeedback = `You are now eligible to move to the next level`;
+    }
+    else
+    {
+      endMsg = `You got ${appState.percCorrect}% correct!`
+		   endFeedback = `Sorry try harder to score at least 7 to move to next Level`;
+    }
 		if(appState.progress.incorrectCategories.length === 0){
 			endFeedback = `You aced it! Good job!`;
 		} else {
