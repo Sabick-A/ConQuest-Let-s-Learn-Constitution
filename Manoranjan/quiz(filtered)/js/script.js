@@ -1,366 +1,331 @@
 const STORE = {
-  questions: {
-      Sovereignty_and_Independence: [
-          {
-              question: "What does it mean for India to be a sovereign nation?",
-              code: ``,
-              answers: [
-                  "India makes its own laws without interference from other countries",
-                  "India is dependent on other nations for governance",
-                  "India's laws are controlled by a global council",
-                  "India must consult other nations before passing laws"
-              ],
-              correctAnswer: "India makes its own laws without interference from other countries"
-          },
-          {
-              question: "How does India exercise its sovereignty?",
-              code: ``,
-              answers: [
-                  "By being self-governed without any external control",
-                  "By consulting other nations for major decisions",
-                  "By seeking approval from international councils",
-                  "By being part of a global governance system"
-              ],
-              correctAnswer: "By being self-governed without any external control"
-          },
-          {
-              question: "Why is sovereignty important for India?",
-              code: ``,
-              answers: [
-                  "It allows India to make independent decisions",
-                  "It binds India to international treaties",
-                  "It limits India's power within the region",
-                  "It makes India reliant on other nations"
-              ],
-              correctAnswer: "It allows India to make independent decisions"
-          }
-      ],
-
-      Socialist_Values: [
-          {
-              question: "What is meant by socialist values in the Indian Preamble?",
-              code: ``,
-              answers: [
-                  "Ensuring wealth is shared fairly among citizens",
-                  "Promoting private wealth accumulation",
-                  "Supporting only certain privileged groups",
-                  "Allowing unrestricted market competition"
-              ],
-              correctAnswer: "Ensuring wealth is shared fairly among citizens"
-          },
-          {
-              question: "How does India promote socialist values?",
-              code: ``,
-              answers: [
-                  "By ensuring equal access to resources and opportunities",
-                  "By allowing individuals to accumulate wealth freely",
-                  "By promoting private businesses over public welfare",
-                  "By encouraging unequal wealth distribution"
-              ],
-              correctAnswer: "By ensuring equal access to resources and opportunities"
-          },
-          {
-              question: "Which of the following is a key element of India's socialist values?",
-              code: ``,
-              answers: [
-                  "Promoting social equality and reducing wealth disparity",
-                  "Focusing solely on economic growth",
-                  "Prioritizing individual wealth over collective welfare",
-                  "Reducing government intervention in the economy"
-              ],
-              correctAnswer: "Promoting social equality and reducing wealth disparity"
-          }
-      ],
-
-      Secularism: [
-          {
-              question: "What does the term 'secular nation' signify in India's Preamble?",
-              code: ``,
-              answers: [
-                  "All religions are treated equally, with no special treatment",
-                  "The government endorses one particular religion",
-                  "Religious practices are banned",
-                  "Only major religions are allowed"
-              ],
-              correctAnswer: "All religions are treated equally, with no special treatment"
-          },
-          {
-              question: "How does secularism manifest in Indian governance?",
-              code: ``,
-              answers: [
-                  "The government remains neutral in religious matters",
-                  "The government favors a specific religion",
-                  "Religious laws override constitutional laws",
-                  "The government discourages all religious activities"
-              ],
-              correctAnswer: "The government remains neutral in religious matters"
-          },
-          {
-              question: "Why is secularism important in a diverse country like India?",
-              code: ``,
-              answers: [
-                  "It ensures equality among all religious groups",
-                  "It promotes a single dominant religion",
-                  "It limits religious freedom",
-                  "It enforces religious practices on citizens"
-              ],
-              correctAnswer: "It ensures equality among all religious groups"
-          }
-      ],
-
-      Democracy_and_Political_System: [
-          {
-              question: "What is the significance of democracy in India’s political system?",
-              code: ``,
-              answers: [
-                  "Citizens elect leaders who represent them in government",
-                  "The government is chosen by military officials",
-                  "Only certain people are allowed to vote",
-                  "Leadership is inherited through family lines"
-              ],
-              correctAnswer: "Citizens elect leaders who represent them in government"
-          },
-          {
-              question: "How do citizens participate in India's democracy?",
-              code: ``,
-              answers: [
-                  "By voting in elections to choose their representatives",
-                  "By relying on the government to make all decisions",
-                  "By avoiding any political involvement",
-                  "By inheriting political positions"
-              ],
-              correctAnswer: "By voting in elections to choose their representatives"
-          },
-          {
-              question: "What role do elections play in India's democracy?",
-              code: ``,
-              answers: [
-                  "They allow citizens to choose their leaders",
-                  "They are symbolic with no real significance",
-                  "They are held only when the government decides",
-                  "They are used to confirm the appointment of officials"
-              ],
-              correctAnswer: "They allow citizens to choose their leaders"
-          }
-      ],
-
-      Justice_Liberty_Equality: [
-          {
-              question: "What are the core values mentioned in the Preamble of the Indian Constitution?",
-              code: ``,
-              answers: [
-                  "Justice, Liberty, and Equality",
-                  "Power, Wealth, and Privilege",
-                  "Authority, Status, and Control",
-                  "Wealth, Influence, and Politics"
-              ],
-              correctAnswer: "Justice, Liberty, and Equality"
-          },
-          {
-              question: "How is justice ensured under the Indian Constitution?",
-              code: ``,
-              answers: [
-                  "Through a fair and impartial legal system",
-                  "By allowing individuals to create their own laws",
-                  "By ignoring any legal disputes",
-                  "By making laws based on personal preferences"
-              ],
-              correctAnswer: "Through a fair and impartial legal system"
-          },
-          {
-              question: "Why is liberty an important value in India's Constitution?",
-              code: ``,
-              answers: [
-                  "It allows individuals to express themselves freely",
-                  "It limits individual freedoms to a great extent",
-                  "It gives the government complete control",
-                  "It focuses solely on economic liberty"
-              ],
-              correctAnswer: "It allows individuals to express themselves freely"
-          }
-      ],
-
-      Respect_for_Constitution: [
-          {
-              question: "What is one of the fundamental duties of an Indian citizen regarding the Constitution?",
-              code: ``,
-              answers: [
-                  "To respect and follow the principles of the Constitution",
-                  "To ignore the rules of the Constitution",
-                  "To criticize the national governance system",
-                  "To rewrite the Constitution regularly"
-              ],
-              correctAnswer: "To respect and follow the principles of the Constitution"
-          },
-          {
-              question: "How can citizens show respect for the Indian Constitution?",
-              code: ``,
-              answers: [
-                  "By following its laws and principles",
-                  "By disregarding constitutional guidelines",
-                  "By challenging every constitutional law",
-                  "By avoiding any participation in governance"
-              ],
-              correctAnswer: "By following its laws and principles"
-          },
-          {
-              question: "Why is it important to follow the Constitution?",
-              code: ``,
-              answers: [
-                  "It ensures a well-organized and fair society",
-                  "It limits the rights of citizens",
-                  "It only applies to government officials",
-                  "It prevents citizens from participating in governance"
-              ],
-              correctAnswer: "It ensures a well-organized and fair society"
-          }
-      ],
-
-      Respect_for_National_Symbols: [
-          {
-              question: "What is the duty of citizens concerning national symbols like the National Flag and Anthem?",
-              code: ``,
-              answers: [
-                  "To respect and honor them",
-                  "To create new national symbols",
-                  "To ignore their significance",
-                  "To modify them as needed"
-              ],
-              correctAnswer: "To respect and honor them"
-          },
-          {
-              question: "How can citizens show respect for the National Flag?",
-              code: ``,
-              answers: [
-                  "By handling it with care and not disrespecting it",
-                  "By altering its design",
-                  "By ignoring its presence",
-                  "By using it for personal purposes"
-              ],
-              correctAnswer: "By handling it with care and not disrespecting it"
-          },
-          {
-              question: "Why is it important to show respect for national symbols?",
-              code: ``,
-              answers: [
-                  "They represent the nation’s identity and unity",
-                  "They are purely decorative",
-                  "They have no real significance",
-                  "They are used for commercial purposes"
-              ],
-              correctAnswer: "They represent the nation’s identity and unity"
-          }
-      ],
-
-      Environmental_Protection: [
-          {
-              question: "What is the duty of Indian citizens regarding the environment?",
-              code: ``,
-              answers: [
-                  "To protect forests, rivers, and wildlife",
-                  "To exploit natural resources for profit",
-                  "To ignore environmental concerns",
-                  "To harm nature as they see fit"
-              ],
-              correctAnswer: "To protect forests, rivers, and wildlife"
-          },
-          {
-              question: "How can citizens contribute to protecting nature?",
-              code: ``,
-              answers: [
-                  "By reducing waste and conserving resources",
-                  "By polluting natural resources",
-                  "By ignoring environmental issues",
-                  "By cutting down trees indiscriminately"
-              ],
-              correctAnswer: "By reducing waste and conserving resources"
-          },
-          {
-              question: "Why is it important for citizens to protect the environment?",
-              code: ``,
-              answers: [
-                  "It ensures a healthy ecosystem for future generations",
-                  "It is not a citizen's responsibility",
-                  "It only benefits the government",
-                  "It leads to personal profit"
-              ],
-              correctAnswer: "It ensures a healthy ecosystem for future generations"
-          }
-      ],
-
-      Scientific_Temper_and_Education: [
-          {
-              question: "What does developing scientific temper mean for Indian citizens?",
-              code: ``,
-              answers: [
-                  "Being curious and thinking logically to solve problems",
-                  "Relying solely on traditional beliefs",
-                  "Ignoring scientific advancements",
-                  "Avoiding critical thinking"
-              ],
-              correctAnswer: "Being curious and thinking logically to solve problems"
-          },
-          {
-              question: "Why is it important to develop a scientific temper?",
-              code: ``,
-              answers: [
-                  "It promotes progress and problem-solving in society",
-                  "It discourages innovation",
-                  "It focuses only on theoretical knowledge",
-                  "It limits curiosity and exploration"
-              ],
-              correctAnswer: "It promotes progress and problem-solving in society"
-          },
-          {
-              question: "What duty do parents have regarding education?",
-              code: ``,
-              answers: [
-                  "Ensuring their children aged 6 to 14 receive an education",
-                  "Avoiding their children's education",
-                  "Discouraging school attendance",
-                  "Relying solely on informal learning"
-              ],
-              correctAnswer: "Ensuring their children aged 6 to 14 receive an education"
-          }
-      ],
-
-      National_Service_and_Harmony: [
-          {
-              question: "What is the duty of Indian citizens regarding national service?",
-              code: ``,
-              answers: [
-                  "To defend and serve the country during emergencies",
-                  "To avoid national responsibilities",
-                  "To rely on others for national defence",
-                  "To prioritize personal interests over national service"
-              ],
-              correctAnswer: "To defend and serve the country during emergencies"
-          },
-          {
-              question: "How can citizens promote harmony in society?",
-              code: ``,
-              answers: [
-                  "By spreading peace and unity among all communities",
-                  "By creating divisions based on religion or language",
-                  "By promoting conflict and misunderstandings",
-                  "By ignoring social issues"
-              ],
-              correctAnswer: "By spreading peace and unity among all communities"
-          },
-          {
-              question: "Why is promoting harmony important for India's diverse society?",
-              code: ``,
-              answers: [
-                  "It strengthens national unity and reduces conflicts",
-                  "It leads to division and instability",
-                  "It only benefits certain communities",
-                  "It encourages violence and unrest"
-              ],
-              correctAnswer: "It strengthens national unity and reduces conflicts"
-          }
-      ]
+    questions: {
+        Fundamental_Duties_Constitution: [
+            {
+                question: "What is one of the fundamental duties of an Indian citizen regarding the Constitution?",
+                code: ``,
+                answers: [
+                    "To respect and follow the principles of the Constitution",
+                    "To ignore the rules of the Constitution",
+                    "To criticize the national governance system",
+                    "To rewrite the Constitution regularly"
+                ],
+                correctAnswer: "To respect and follow the principles of the Constitution"
+            },
+            {
+                question: "How can citizens show respect for the Indian Constitution?",
+                code: ``,
+                answers: [
+                    "By following its laws and principles",
+                    "By disregarding constitutional guidelines",
+                    "By challenging every constitutional law",
+                    "By avoiding any participation in governance"
+                ],
+                correctAnswer: "By following its laws and principles"
+            },
+            {
+                question: "Why is it important to follow the Constitution?",
+                code: ``,
+                answers: [
+                    "It ensures a well-organized and fair society",
+                    "It limits the rights of citizens",
+                    "It only applies to government officials",
+                    "It prevents citizens from participating in governance"
+                ],
+                correctAnswer: "It ensures a well-organized and fair society"
+            }
+        ],
+  
+        Respect_for_National_Symbols: [
+            {
+                question: "What is the duty of citizens concerning national symbols like the National Flag and Anthem?",
+                code: ``,
+                answers: [
+                    "To respect and honor them",
+                    "To create new national symbols",
+                    "To ignore their significance",
+                    "To modify them as needed"
+                ],
+                correctAnswer: "To respect and honor them"
+            },
+            {
+                question: "How can citizens show respect for the National Flag?",
+                code: ``,
+                answers: [
+                    "By handling it with care and not disrespecting it",
+                    "By altering its design",
+                    "By ignoring its presence",
+                    "By using it for personal purposes"
+                ],
+                correctAnswer: "By handling it with care and not disrespecting it"
+            },
+            {
+                question: "Why is it important to show respect for national symbols?",
+                code: ``,
+                answers: [
+                    "They represent the nation’s identity and unity",
+                    "They are purely decorative",
+                    "They have no real significance",
+                    "They are used for commercial purposes"
+                ],
+                correctAnswer: "They represent the nation’s identity and unity"
+            }
+        ],
+  
+        Environmental_Protection: [
+            {
+                question: "What is the duty of Indian citizens regarding the environment?",
+                code: ``,
+                answers: [
+                    "To protect forests, rivers, and wildlife",
+                    "To exploit natural resources for profit",
+                    "To ignore environmental concerns",
+                    "To harm nature as they see fit"
+                ],
+                correctAnswer: "To protect forests, rivers, and wildlife"
+            },
+            {
+                question: "How can citizens contribute to protecting nature?",
+                code: ``,
+                answers: [
+                    "By reducing waste and conserving resources",
+                    "By polluting natural resources",
+                    "By ignoring environmental issues",
+                    "By cutting down trees indiscriminately"
+                ],
+                correctAnswer: "By reducing waste and conserving resources"
+            },
+            {
+                question: "Why is it important for citizens to protect the environment?",
+                code: ``,
+                answers: [
+                    "It ensures a healthy ecosystem for future generations",
+                    "It is not a citizen's responsibility",
+                    "It only benefits the government",
+                    "It leads to personal profit"
+                ],
+                correctAnswer: "It ensures a healthy ecosystem for future generations"
+            }
+        ],
+  
+        Scientific_Temper_and_Education: [
+            {
+                question: "What does developing scientific temper mean for Indian citizens?",
+                code: ``,
+                answers: [
+                    "Being curious and thinking logically to solve problems",
+                    "Relying solely on traditional beliefs",
+                    "Ignoring scientific advancements",
+                    "Avoiding critical thinking"
+                ],
+                correctAnswer: "Being curious and thinking logically to solve problems"
+            },
+            {
+                question: "Why is it important to develop a scientific temper?",
+                code: ``,
+                answers: [
+                    "It promotes progress and problem-solving in society",
+                    "It discourages innovation",
+                    "It focuses only on theoretical knowledge",
+                    "It limits curiosity and exploration"
+                ],
+                correctAnswer: "It promotes progress and problem-solving in society"
+            },
+            {
+                question: "What duty do parents have regarding education?",
+                code: ``,
+                answers: [
+                    "Ensuring their children aged 6 to 14 receive an education",
+                    "Avoiding their children's education",
+                    "Discouraging school attendance",
+                    "Relying solely on informal learning"
+                ],
+                correctAnswer: "Ensuring their children aged 6 to 14 receive an education"
+            }
+        ],
+  
+        National_Service_and_Harmony: [
+            {
+                question: "What is the duty of Indian citizens regarding national service?",
+                code: ``,
+                answers: [
+                    "To defend and serve the country during emergencies",
+                    "To avoid national responsibilities",
+                    "To rely on others for national defence",
+                    "To prioritize personal interests over national service"
+                ],
+                correctAnswer: "To defend and serve the country during emergencies"
+            },
+            {
+                question: "How can citizens promote harmony in society?",
+                code: ``,
+                answers: [
+                    "By spreading peace and unity among all communities",
+                    "By creating divisions based on religion or language",
+                    "By promoting conflict and misunderstandings",
+                    "By ignoring social issues"
+                ],
+                correctAnswer: "By spreading peace and unity among all communities"
+            },
+            {
+                question: "Why is promoting harmony important for India's diverse society?",
+                code: ``,
+                answers: [
+                    "It strengthens national unity and reduces conflicts",
+                    "It leads to division and instability",
+                    "It only benefits certain communities",
+                    "It encourages violence and unrest"
+                ],
+                correctAnswer: "It strengthens national unity and reduces conflicts"
+            }
+        ],
+  
+        Promoting_Fraternity_and_Dignity: [
+            {
+                question: "What is one of the fundamental duties related to promoting fraternity?",
+                code: ``,
+                answers: [
+                    "To uphold the dignity of all citizens",
+                    "To discriminate based on caste and religion",
+                    "To prioritize only personal interests",
+                    "To maintain animosity between communities"
+                ],
+                correctAnswer: "To uphold the dignity of all citizens"
+            },
+            {
+                question: "How does promoting fraternity strengthen the nation?",
+                code: ``,
+                answers: [
+                    "It builds unity and mutual respect among citizens",
+                    "It encourages division and conflict",
+                    "It leads to social unrest",
+                    "It focuses on individual rather than collective wellbeing"
+                ],
+                correctAnswer: "It builds unity and mutual respect among citizens"
+            },
+            {
+                question: "Why is promoting dignity important for society?",
+                code: ``,
+                answers: [
+                    "It ensures that everyone is treated equally and fairly",
+                    "It supports discrimination",
+                    "It limits individual freedom",
+                    "It benefits only certain groups"
+                ],
+                correctAnswer: "It ensures that everyone is treated equally and fairly"
+            }
+        ],
+  
+        Safeguarding_Public_Property: [
+            {
+                question: "What is the duty of citizens regarding public property?",
+                code: ``,
+                answers: [
+                    "To safeguard public property and avoid vandalism",
+                    "To use public property for personal benefit",
+                    "To neglect public property",
+                    "To sell public property for profit"
+                ],
+                correctAnswer: "To safeguard public property and avoid vandalism"
+            },
+            {
+                question: "Why is it important to protect public property?",
+                code: ``,
+                answers: [
+                    "It ensures the collective welfare of society",
+                    "It benefits only individuals",
+                    "It is not the responsibility of citizens",
+                    "It has no real significance"
+                ],
+                correctAnswer: "It ensures the collective welfare of society"
+            },
+            {
+                question: "What happens if public property is not protected?",
+                code: ``,
+                answers: [
+                    "It leads to loss of resources and facilities for the community",
+                    "It improves public services",
+                    "It increases public wealth",
+                    "It enhances the quality of life"
+                ],
+                correctAnswer: "It leads to loss of resources and facilities for the community"
+            }
+        ],
+  
+        Respecting_Diversity_and_Rights: [
+            {
+                question: "What duty do Indian citizens have regarding the rights of others?",
+                code: ``,
+                answers: [
+                    "To respect the rights of fellow citizens",
+                    "To disregard the rights of others",
+                    "To prioritize personal rights over others",
+                    "To infringe on others' rights"
+                ],
+                correctAnswer: "To respect the rights of fellow citizens"
+            },
+            {
+                question: "Why is respecting diversity important in India?",
+                code: ``,
+                answers: [
+                    "It promotes unity in a diverse society",
+                    "It limits the expression of different cultures",
+                    "It encourages division",
+                    "It focuses on a single dominant culture"
+                ],
+                correctAnswer: "It promotes unity in a diverse society"
+            },
+            {
+                question: "How does respecting the rights of others contribute to national unity?",
+                code: ``,
+                answers: [
+                    "It fosters mutual respect and harmony",
+                    "It creates divisions within society",
+                    "It limits individual freedom",
+                    "It encourages conflicts"
+                ],
+                correctAnswer: "It fosters mutual respect and harmony"
+            }
+        ],
+  
+        Promoting_Humanism_and_Peace: [
+            {
+                question: "What is one of the fundamental duties of Indian citizens regarding peace?",
+                code: ``,
+                answers: [
+                    "To promote humanism and foster peace",
+                    "To encourage violence and conflict",
+                    "To prioritize personal gains over peace",
+                    "To ignore issues of global peace"
+                ],
+                correctAnswer: "To promote humanism and foster peace"
+            },
+            {
+                question: "How can Indian citizens contribute to global peace?",
+                code: ``,
+                answers: [
+                    "By promoting non-violence and understanding",
+                    "By engaging in conflicts",
+                    "By disregarding global issues",
+                    "By supporting violent movements"
+                ],
+                correctAnswer: "By promoting non-violence and understanding"
+            },
+            {
+                question: "Why is fostering peace important in a global society?",
+                code: ``,
+                answers: [
+                    "It leads to international cooperation and stability",
+                    "It encourages global division",
+                    "It benefits only certain nations",
+                    "It focuses solely on national issues"
+                ],
+                correctAnswer: "It leads to international cooperation and stability"
+            }
+        ]
+    }
   }
-}
+  
 
    
 
