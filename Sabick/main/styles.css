@@ -45,7 +45,7 @@ body {
     background-color: whitesmoke;
     padding: 2rem;
     border-radius: 30px;
-    opacity: 0.7;
+    opacity: 0.9;
     transition: opacity 0.3s ease-out;
 }
 
@@ -302,4 +302,61 @@ iframe {
     height: 100%, !important;
     width: 100% !important;
     transform: translateX(-500px);
+}
+
+#npc1p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: translate(0rem, -7rem);
+}
+
+#npc1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: translate(-12rem, -7rem);
+}
+
+#progress {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    margin-top: 50px;
+    height: 20px;
+    padding: 2rem;
+    width: 30vw;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.conv {
+    text-align: center;
+    border: 1px solid black;
+    background-color: whitesmoke;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease-out;
+    font-size: xx-small;
+}
+
+.loading-bar {
+    height: 100%;
+    width: 0%;
+    background-color: whitesmoke;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    opacity: 0.8;
+}
+
+.hidden {
+    display: none;
+    pointer-events: none;
 }

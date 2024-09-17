@@ -2,7 +2,8 @@ Use  I to get Info Page
 
 interact :
     1: For resources
-
+    2: for botpress
+    3:for npc1 interaction
 
 
 
@@ -14,9 +15,9 @@ dim done
 
 bot done
 
-npc interaction
+npc interaction done
 
-key collection
+key collection done
 
 
 

@@ -10,7 +10,7 @@ const xButton = document.getElementById('xbutton');
 const resDiv = document.getElementById('resources');
 const activePreambleDiv = document.querySelectorAll('.preamble');
 let activePreamble = 0;
-
+let activeconv=1;
 function dimIt() {
     canvas.classList.add('dimmed');
     commandsDiv.classList.add('dimmed');
@@ -116,10 +116,10 @@ interactMap.forEach((row, i) => {
 })
 
 const image = new Image();
-image.src = "./assets/images/mapz.png";
+image.src = "./assets/images/SIH.png";
 
 const foregroundImage = new Image()
-foregroundImage.src = './assets/images/foregroundObjects.png'
+foregroundImage.src = './assets/images/foreground.png'
 
 const playerDownImage = new Image()
 playerDownImage.src = './assets/images/playerDown.png'
@@ -317,6 +317,22 @@ function animate() {
                 isDivOpen = true;
                 dimIt();
             }
+            else if (inter.val==3){
+                activeconv=1;
+                const npc1p=document.getElementById('npc1p');
+                const npc1=document.getElementById('npc1');
+                npc1p.classList.remove('hidden');
+                dimIt();
+                setTimeout(() => {
+                    npc1p.classList.add('hidden');
+                    npc1.classList.remove('hidden');
+                  }, 500);
+                setTimeout(() => {
+                    npc1.classList.add('hidden');
+                    unDimIt();
+                  }, 2000);
+            }
+
         }
     });
 
@@ -512,6 +528,7 @@ window.addEventListener('keydown', (e) => {
                 isDivOpen = false;
                 unDimIt();
             }
+            break;
     }
 
 })
