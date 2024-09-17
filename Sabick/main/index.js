@@ -10,16 +10,20 @@ const xButton = document.getElementById('xbutton');
 const resDiv = document.getElementById('resources');
 const activePreambleDiv = document.querySelectorAll('.preamble');
 let activePreamble = 0;
-
+let activeconv=1;
 function dimIt() {
     canvas.classList.add('dimmed');
     commandsDiv.classList.add('dimmed');
+    isDivOpen=true;
 }
 
 function unDimIt() {
     canvas.classList.remove('dimmed');
     commandsDiv.classList.remove('dimmed');
+    isDivOpen=false;
 }
+
+window.botpress.on('webchat:closed',unDimIt);
 
 document.addEventListener('DOMContentLoaded', () => {
     const startDiv = document.getElementById('start');
@@ -34,8 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
-
-
 
 const canvas = document.querySelector('#mainFrame');
 
@@ -60,7 +62,7 @@ for (let i = 0; i < collisions.length; i += 70) {
 const boundaries = []
 collisionMap.forEach((row, i) => {
     row.forEach((column, j) => {
-        if (column === 9) {
+        if (column != 0) {
             boundaries.push(
                 new Boundary({
                     position: {
@@ -80,7 +82,7 @@ for (let i = 0; i < teleport.length; i += 70) {
 const teleports = []
 teleportMap.forEach((row, i) => {
     row.forEach((column, j) => {
-        if (column === 1) {
+        if (column != 0) {
             teleports.push(
                 new Boundary({
                     position: {
@@ -100,7 +102,7 @@ for (let i = 0; i < interact.length; i += 70) {
 const interacts = []
 interactMap.forEach((row, i) => {
     row.forEach((column, j) => {
-        if (column === 1) {
+        if (column != 0) {
             interacts.push(
                 new Boundary({
                     position: {
@@ -114,10 +116,10 @@ interactMap.forEach((row, i) => {
 })
 
 const image = new Image();
-image.src = "./assets/images/mapz.png";
+image.src = "./assets/images/SIH.png";
 
 const foregroundImage = new Image()
-foregroundImage.src = './assets/images/foregroundObjects.png'
+foregroundImage.src = './assets/images/foreground.png'
 
 const playerDownImage = new Image()
 playerDownImage.src = './assets/images/playerDown.png'
@@ -309,6 +311,28 @@ function animate() {
                 resDiv.classList.remove('hidden');
                 dimIt();
             }
+            else if (inter.val == 2) {
+                const botpress = window.botpress;
+                botpress.open();
+                isDivOpen = true;
+                dimIt();
+            }
+            else if (inter.val==3){
+                activeconv=1;
+                const npc1p=document.getElementById('npc1p');
+                const npc1=document.getElementById('npc1');
+                npc1p.classList.remove('hidden');
+                dimIt();
+                setTimeout(() => {
+                    npc1p.classList.add('hidden');
+                    npc1.classList.remove('hidden');
+                  }, 500);
+                setTimeout(() => {
+                    npc1.classList.add('hidden');
+                    unDimIt();
+                  }, 2000);
+            }
+
         }
     });
 
@@ -504,6 +528,7 @@ window.addEventListener('keydown', (e) => {
                 isDivOpen = false;
                 unDimIt();
             }
+            break;
     }
 
 })
