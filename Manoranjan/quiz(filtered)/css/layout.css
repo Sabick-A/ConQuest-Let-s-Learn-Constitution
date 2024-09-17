@@ -6,7 +6,7 @@ html, body {
 	padding: 0;
 	height: 100%;
 	width: 100%;
-	font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+	font-family: joystix monospace !important;
 }
 body {
 	display: flex;
