@@ -54,18 +54,21 @@
 		 height: 350px;
 	}
 }
- .card:before {
-	 content: '';
-	 position: absolute;
-	 top: 0;
-	 left: 0;
-	 width: 100%;
-	 height: 110%;
-	 background-size: cover;
-	 background-position: 0 0;
-	 transition: transform calc(var(--d) * 1.5) var(--e);
-	 pointer-events: none;
+.card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Adjust height to 100% to fit the card */
+    
+	 /* Ensures the image covers the entire card */
+	 background-size: 120%;
+    background-position: center; /* Center the image in the card */
+    transition: transform calc(var(--d) * 1.5) var(--e);
+    pointer-events: none;
 }
+
  .card:after {
 	 content: '';
 	 display: block;
@@ -80,16 +83,16 @@
 	 transition: transform calc(var(--d) * 2) var(--e);
 }
  .card:nth-child(1):before {
-	 background-image: url(https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+	 background-image: url(Card.png);
 }
  .card:nth-child(2):before {
-	 background-image: url(https://images.unsplash.com/photo-1533903345306-15d1c30952de?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+	 background-image: url(match-make.jpg);
 }
  .card:nth-child(3):before {
-	 background-image: url(https://images.unsplash.com/photo-1545243424-0ce743321e11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+	 background-image: url(quiz_game.jpg);
 }
  .card:nth-child(4):before {
-	 background-image: url(https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+	 background-image: url(situation_based.jpg);
 }
  .content {
 	 position: relative;
