@@ -347,7 +347,7 @@ iframe {
 
 .loading-bar {
     height: 100%;
-    width: 0%;
+    width: 30%;
     background-color: whitesmoke;
     border-radius: 25px;
     text-align: center;
@@ -357,6 +357,6 @@ iframe {
 }
 
 .hidden {
-    display: none;
+    visibility: hidden;
     pointer-events: none;
 }
