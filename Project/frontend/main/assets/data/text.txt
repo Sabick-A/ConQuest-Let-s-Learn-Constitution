@@ -1,0 +1,24 @@
+Use  I to get Info Page
+
+interact :
+    1: For resources
+    2: for botpress
+    3:for npc1 interaction
+
+
+
+info done
+
+resource  done
+
+dim done
+
+bot done
+
+npc interaction done
+
+key collection done
+
+
+
+have to optimize the resource adding and code
