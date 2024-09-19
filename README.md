@@ -66,6 +66,4 @@ By implementing CivicQuest, we expect to:
   - Manoranjan Sahoo
   - Krishnanjali L
 
----
-
-Feel free to customize this further as your project evolves!
+--
