@@ -68,7 +68,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.get("/",(req,res)=>{
-    res.render("./homepage/index.ejs");
+    // res.render("./homepage/index.ejs");
+    res.redirect("/map")
 })
 
 app.get("/login",(req,res)=>{
