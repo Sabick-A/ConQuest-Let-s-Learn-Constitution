@@ -1,6 +1,7 @@
 
 # ConQuest: Let’s Learn Constitution One Game At a Time 🎮📜
 
+
 **ConQuest** is an interactive platform designed to simplify and gamify learning about the Indian Constitution, making it accessible and engaging for a broad audience, especially youth. By transforming legal text into games, quizzes, and personalized interactions, CivicQuest empowers users with a deeper understanding of their rights, duties, and the structure of governance.
 
 ## 🚀 Features
